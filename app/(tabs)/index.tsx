@@ -9,7 +9,7 @@ import IconButton from "@/components/IconButton";
 import EmojiPicker from "@/components/EmojiPicker";
 import EmojiList from "@/components/EmojiList";
 import EmojiSticker from "@/components/EmojiSticker";
-
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(
     undefined
@@ -62,7 +62,7 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer
           imageSource={require("../../assets/images/bg.png")}
@@ -98,12 +98,13 @@ export default function Index() {
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onCloseModel={onModalClose} onSelect={setEmojiPicked} />
       </EmojiPicker>
-    </View>
+    </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 5,
     flex: 1,
     backgroundColor: "#25292e",
     alignItems: "center",
