@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import "../global.css";
-import { View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 export default function RootLayout() {
   return (
     <Stack>
@@ -11,6 +11,7 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen name="+not-found" />
+      <StatusBar style="auto" />
     </Stack>
   );
 }
